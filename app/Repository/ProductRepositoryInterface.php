@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Repository\Product;
+namespace App\Repository;
 
 use App\Dtos\ProductDto;
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Dtos\ProductDto;
-use App\Repository\Product\ProductRepositoryInterface;
+use App\Repository\ProductRepositoryInterface;
 
 class ProductService
 {

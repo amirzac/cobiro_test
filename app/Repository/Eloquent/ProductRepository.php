@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Repository\Product;
+namespace App\Repository\Eloquent;
 
 use App\Dtos\ProductDto;
 use App\Models\Product\Price;
 use App\Models\Product\Product;
+use App\Repository\ProductRepositoryInterface;
 
 class ProductRepository implements ProductRepositoryInterface
 {
