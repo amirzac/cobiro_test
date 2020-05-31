@@ -25,13 +25,9 @@ class Product extends Model
         return $product;
     }
 
-    public function getIntegerConvertedPrice(): int
+    public function getPrice(): Price
     {
-        return $this->price;
-    }
-
-    public function getPrice(): float
-    {
-        return round(($this->getIntegerConvertedPrice() / 100), 2);
+        $priceValue = floatval(round($this->price / 100, 2));
+        return new Price($priceValue);
     }
 }

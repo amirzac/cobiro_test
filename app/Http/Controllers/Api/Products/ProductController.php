@@ -9,7 +9,6 @@ use App\Http\Requests\Product\CreateRequest;
 use App\Service\ProductService;
 use Illuminate\Routing\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use function GuzzleHttp\headers_from_lines;
 
 class ProductController extends Controller
 {
