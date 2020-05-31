@@ -9,6 +9,7 @@ use App\Http\Requests\Product\CreateRequest;
 use App\Service\ProductService;
 use Illuminate\Routing\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use function GuzzleHttp\headers_from_lines;
 
 class ProductController extends Controller
 {
@@ -28,10 +29,14 @@ class ProductController extends Controller
 
         $productId = $this->service->store($productDto);
 
-        return new JsonResponse([
+        $response = new JsonResponse([
             'data' => [
                 'id' => $productId,
             ],
         ], 201);
+
+        $response->headers->set('Location', '/api/products/' . $productId);
+
+        return $response;
     }
 }
