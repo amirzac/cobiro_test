@@ -21,9 +21,9 @@ class CreateRequest extends FormRequest
         ];
     }
 
-    public function getIntegerPrice(): int
+    public function getPrice(): float
     {
-        return intval($this->get('price') * 100);
+        return floatval($this->get('price'));
     }
 
     public function getName(): string

@@ -8,9 +8,9 @@ class ProductDto
 {
     private string $name;
 
-    private int $price;
+    private float $price;
 
-    public function __construct(string $name, int $price)
+    public function __construct(string $name, float $price)
     {
         $this->name = $name;
         $this->price = $price;
@@ -21,7 +21,7 @@ class ProductDto
         return $this->name;
     }
 
-    public function getPrice(): int
+    public function getPrice(): float
     {
         return $this->price;
     }

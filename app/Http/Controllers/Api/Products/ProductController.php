@@ -23,7 +23,7 @@ class ProductController extends Controller
     {
         $productDto = new ProductDto(
             $request->getName(),
-            $request->getIntegerPrice()
+            $request->getPrice()
         );
 
         $productId = $this->service->store($productDto);
