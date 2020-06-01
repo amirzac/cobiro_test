@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Dtos\ProductDto;
+use App\Models\Product\Price;
+use App\Models\Product\Product;
 use App\Repository\ProductRepositoryInterface;
 
 class ProductService
@@ -18,6 +20,11 @@ class ProductService
 
     public function store(ProductDto $productDto): int
     {
-        return $this->products->store($productDto);
+        $product = Product::createNew(
+            $productDto->getName(),
+            new Price($productDto->getPrice())
+        );
+
+        return $this->products->store($product);
     }
 }

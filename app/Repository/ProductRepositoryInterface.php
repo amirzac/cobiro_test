@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
-use App\Dtos\ProductDto;
+use App\Models\Product\Product;
 
 interface ProductRepositoryInterface
 {
-    public function store(ProductDto $productDto): int;
+    //if we used Doctrine instead of Active record, Product would just entity class
+    public function store(Product $product): int;
 }
